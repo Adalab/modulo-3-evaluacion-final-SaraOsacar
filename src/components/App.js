@@ -4,13 +4,14 @@ import { useEffect, useState } from 'react';
 import getDataFromApi from '../services/api';
 import CharacterList from './CharacterList';
 import ls from '../services/localStorage';
+import Filters from './Filters';
 
 
 function App() {
 
   const [characterList, setCharacterList] = useState (ls.get('characters', []));
-
   const [searchByName, setSearchByName] = useState ('');
+  const [searchBySpecies, setSearchBySpecies] = useState ('');
 
 
 
@@ -24,12 +25,42 @@ function App() {
     }
   }, []);
 
-  const handleChangeSearchName = (ev) => {
-    setSearchByName(ev.target.value);
+  const handleFilter = (varName, varValue) => {
+    if (varName === 'name') {
+      setSearchByName(varValue);
+    }
+     
+    else if(varName === 'species'){
+      setSearchBySpecies(varValue)
+    }
   }
+  
+
+  /*
+  const handleChangeSearchName = (ev) => {
+    //setSearchByName(ev.target.value);
+    handleFilter('name', ev.target.value);
+  }
+  const handleChangeSearchSpecie = (ev) => {
+   // setSearchBySpecie(ev.target.value);
+   handleFilter('name', ev.target.value);
+  }
+*/
 
   const filteredCharacter = characterList
   .filter((eachCharacter) => eachCharacter.name.toLowerCase().includes(searchByName.toLowerCase()))
+/*
+  
+  .filter((eachCharacter) => {
+    if(searchBySpecies === 'ALL') {
+      return true;
+    }
+    else {
+      return eachCharacter.species === searchBySpecies;
+    }
+  }); 
+  const species = characterList.map((eachCharacter)=> eachCharacter.species);
+  */
 
   return (
     <div>
@@ -37,18 +68,11 @@ function App() {
         <img className="header__img" src={Logo} alt="Logo Rick and Morty" />
       </header>
       <main className="main">
-        <form className="main__form">
-          <label className="form__label" htmlFor="search__name">
-            <input
-              type="text"
-              placeholder="Write the name of the character you're looking for"
-              id="search__name"
-              className="main__input"
-              value={searchByName}
-              onChange={handleChangeSearchName}
-            />
-          </label>
-        </form>
+        <Filters 
+        searchByName={searchByName}
+        searchBySpecies={searchBySpecies}
+        handleFilter={handleFilter}
+       />
         <div className="list">
           <CharacterList characterList={filteredCharacter} />
         </div>

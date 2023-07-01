@@ -8,4 +8,4 @@ function CharacterItem({ eachCharacter }) {
     </div>
   );
 }
-export default CharacterItem;
+export default CharacterItem; 

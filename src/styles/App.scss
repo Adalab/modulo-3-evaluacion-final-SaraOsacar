@@ -27,6 +27,19 @@
     margin-bottom: 20px;
   }
 }
+.form__labelSpecies {
+  color: white;
+}
+.select__species {
+  margin-top: 20px;
+    width: 100px;
+    height: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    
+
+}
 .card__container {
   border: 2px solid rgb(47, 255, 71);
   text-align: center;
