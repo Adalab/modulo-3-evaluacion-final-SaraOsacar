@@ -3,18 +3,21 @@ import Logo from "../images/Logo.jpg";
 import { useEffect, useState } from 'react';
 import getDataFromApi from '../services/api';
 import CharacterList from './CharacterList';
+import ls from '../services/localStorage';
 
 
 function App() {
 
-  const [characterList, setCharacterList] = useState ([]);
+  const [characterList, setCharacterList] = useState (ls.get('characters', []));
 
   useEffect (() => {
-    getDataFromApi()
-    .then((cleanData) => {
-      setCharacterList(cleanData);
+    if(ls.get('characters', null) === null) {
+      getDataFromApi().then((cleanData) => {
+        setCharacterList(cleanData);
 
-    });
+        ls.set('characters', cleanData);
+      });
+    }
   }, []);
 
   return (
