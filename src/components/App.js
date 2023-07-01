@@ -19,17 +19,23 @@ function App() {
 
   return (
     <div>
-      <header className='header'>
-        <img className='header__img' src={Logo} alt="Logo Rick and Morty" />
+      <header className="header">
+        <img className="header__img" src={Logo} alt="Logo Rick and Morty" />
       </header>
       <main className="main">
-        <form className='main__form'>
+        <form className="main__form">
           <label htmlFor="name">
-          <input type="text" placeholder='Name' id="name"/>
+            <input
+              type="text"
+              placeholder="Filtrar por nombre"
+              id="name"
+              className="main__input"
+            />
           </label>
         </form>
-        <CharacterList characterList={characterList}/>
-        
+        <div className="list">
+          <CharacterList characterList={characterList} />
+        </div>
       </main>
     </div>
   );

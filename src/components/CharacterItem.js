@@ -2,9 +2,9 @@ function CharacterItem({ eachCharacter }) {
   console.log(eachCharacter);
   return (
     <>
-      <img src={eachCharacter.image} alt={`Foto de ${eachCharacter.name}`} />
-      <h3>{eachCharacter.name}</h3>
-      <p>{eachCharacter.species}</p>
+      <img src={eachCharacter.image} alt={`Foto de ${eachCharacter.name}`} className="card__img"/>
+      <h3 className="card__name">{eachCharacter.name}</h3>
+      <p className="card__description">{eachCharacter.species}</p>
     </>
   );
 }
