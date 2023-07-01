@@ -2,7 +2,7 @@ import CharacterItem from './CharacterItem';
 
 function CharacterList({ characterList }) {
   const htmlLi = characterList.map((eachCharacter) => (
-    <li className="character__list">
+    <li key={eachCharacter.id}className="character__list">
       <CharacterItem eachCharacter={eachCharacter} />
     </li>
   ));
