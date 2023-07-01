@@ -10,6 +10,10 @@ function App() {
 
   const [characterList, setCharacterList] = useState (ls.get('characters', []));
 
+  const [searchByName, setSearchByName] = useState ('');
+
+
+
   useEffect (() => {
     if(ls.get('characters', null) === null) {
       getDataFromApi().then((cleanData) => {
@@ -19,6 +23,13 @@ function App() {
       });
     }
   }, []);
+
+  const handleChangeSearchName = (ev) => {
+    setSearchByName(ev.target.value);
+  }
+
+  const filteredCharacter = characterList
+  .filter((eachCharacter) => eachCharacter.name.toLowerCase().includes(searchByName.toLowerCase()))
 
   return (
     <div>
@@ -33,11 +44,13 @@ function App() {
               placeholder="Filtrar por nombre"
               id="name"
               className="main__input"
+              value={searchByName}
+              onChange={handleChangeSearchName}
             />
           </label>
         </form>
         <div className="list">
-          <CharacterList characterList={characterList} />
+          <CharacterList characterList={filteredCharacter} />
         </div>
       </main>
     </div>
