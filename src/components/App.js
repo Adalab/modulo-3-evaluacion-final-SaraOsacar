@@ -38,11 +38,11 @@ function App() {
       </header>
       <main className="main">
         <form className="main__form">
-          <label htmlFor="name">
+          <label className="form__label" htmlFor="search__name">
             <input
               type="text"
-              placeholder="Filtrar por nombre"
-              id="name"
+              placeholder="Write the name of the character you're looking for"
+              id="search__name"
               className="main__input"
               value={searchByName}
               onChange={handleChangeSearchName}
@@ -53,6 +53,10 @@ function App() {
           <CharacterList characterList={filteredCharacter} />
         </div>
       </main>
+      <footer className="footer">
+        <p className="footer__phrase">Rick and Morty ©</p>
+        <p className="footer__copy">Animated science fiction sitcom</p>
+      </footer>
     </div>
   );
 }
