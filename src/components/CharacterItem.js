@@ -1,11 +1,19 @@
+import { Link } from 'react-router-dom';
+
 function CharacterItem({ eachCharacter }) {
   console.log(eachCharacter);
   return (
     <div className="card__container">
-      <img src={eachCharacter.image} alt={`Foto de ${eachCharacter.name}`} className="card__img"/>
-      <h3 className="card__name">{eachCharacter.name}</h3>
-      <p className="card__description">{eachCharacter.species}</p>
+      <Link to={'/character/' + eachCharacter.id}>
+        <img
+          src={eachCharacter.image}
+          alt={`Foto de ${eachCharacter.name}`}
+          className="card__img"
+        />
+        <h3 className="card__name">{eachCharacter.name}</h3>
+        <p className="card__description">{eachCharacter.species}</p>
+      </Link>
     </div>
   );
 }
-export default CharacterItem; 
+export default CharacterItem;

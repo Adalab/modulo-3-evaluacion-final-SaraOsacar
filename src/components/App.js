@@ -1,22 +1,22 @@
 import '../styles/App.scss';
-import Logo from "../images/Logo.jpg";
+import Logo from '../images/Logo.jpg';
 import { useEffect, useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import { useLocation, matchPath } from 'react-router-dom';
 import getDataFromApi from '../services/api';
 import CharacterList from './CharacterList';
 import ls from '../services/localStorage';
 import Filters from './Filters';
+import CharacterDetail from './CharacterDetail';
 
 
 function App() {
+  const [characterList, setCharacterList] = useState(ls.get('characters', []));
+  const [searchByName, setSearchByName] = useState('');
+  const [searchBySpecies, setSearchBySpecies] = useState('');
 
-  const [characterList, setCharacterList] = useState (ls.get('characters', []));
-  const [searchByName, setSearchByName] = useState ('');
-  const [searchBySpecies, setSearchBySpecies] = useState ('');
-
-
-
-  useEffect (() => {
-    if(ls.get('characters', null) === null) {
+  useEffect(() => {
+    if (ls.get('characters', null) === null) {
       getDataFromApi().then((cleanData) => {
         setCharacterList(cleanData);
 
@@ -28,28 +28,17 @@ function App() {
   const handleFilter = (varName, varValue) => {
     if (varName === 'name') {
       setSearchByName(varValue);
+    } else if (varName === 'species') {
+      setSearchBySpecies(varValue);
     }
-     
-    else if(varName === 'species'){
-      setSearchBySpecies(varValue)
-    }
-  }
+  };
+
   
 
-  /*
-  const handleChangeSearchName = (ev) => {
-    //setSearchByName(ev.target.value);
-    handleFilter('name', ev.target.value);
-  }
-  const handleChangeSearchSpecie = (ev) => {
-   // setSearchBySpecie(ev.target.value);
-   handleFilter('name', ev.target.value);
-  }
-*/
-
-  const filteredCharacter = characterList
-  .filter((eachCharacter) => eachCharacter.name.toLowerCase().includes(searchByName.toLowerCase()))
-/*
+  const filteredCharacter = characterList.filter((eachCharacter) =>
+    eachCharacter.name.toLowerCase().includes(searchByName.toLowerCase())
+  );
+  /* FILTRO POR ESPECIES
   
   .filter((eachCharacter) => {
     if(searchBySpecies === 'ALL') {
@@ -62,24 +51,57 @@ function App() {
   const species = characterList.map((eachCharacter)=> eachCharacter.species);
   */
 
+  // Obtener información del character
+ 
+  const {pathname} = useLocation();
+  
+
+  const routeData = matchPath('/character/:characterId', pathname);
+  console.log(routeData);
+
+  const characterId = routeData !== null ? routeData.params.characterId : null;
+
+  const characterData = characterList.find(
+    (character) => character.id === parseInt(characterId)
+  );
+  
+  
   return (
     <div>
       <header className="header">
         <img className="header__img" src={Logo} alt="Logo Rick and Morty" />
       </header>
       <main className="main">
-        <Filters 
-        searchByName={searchByName}
-        searchBySpecies={searchBySpecies}
-        handleFilter={handleFilter}
-       />
-        <div className="list">
-          <CharacterList characterList={filteredCharacter} />
-        </div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Filters
+                  searchByName={searchByName}
+                  handleFilter={handleFilter}
+                />
+                <div className="list">
+                  <CharacterList characterList={filteredCharacter} />
+                </div>
+              </>
+            }
+          />
+          
+          <Route
+            path="/character/:characterId"
+            element={<CharacterDetail characterData={characterData} />}
+        
+          />
+          
+        </Routes>
+        
+       
       </main>
       <footer className="footer">
-        <p className="footer__phrase">Rick and Morty ©</p>
-        <p className="footer__copy">Animated science fiction sitcom</p>
+        <p className="footer__phrase">
+          Rick and Morty © Animated science fiction sitcom
+        </p>
       </footer>
     </div>
   );

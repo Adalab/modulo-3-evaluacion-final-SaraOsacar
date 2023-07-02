@@ -37,7 +37,6 @@
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    
 
 }
 .card__container {
@@ -48,17 +47,23 @@
   margin-left: 35px;
   margin-right: 35px;
   margin-bottom: 30px;
+  padding: 10px;
+  background-color:cadetblue;
+  /*background-color:#07b0c7;*/
+  
 }
 .character__list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  
 }
 
 .card__img {
-  height: 200px;
+  height: 180px;
+  
+  
 }
 .footer {
     display: flex;
@@ -66,4 +71,14 @@
     text-align: center;
     color: white;
     background-color: black;  
+    &__phrase {
+      font-size: 15px;
+      margin-bottom: 35px;
+    }
+    
+}
+.card__detail {
+  display: flex;
+  flex-direction: column;
+   color: white;
 }
