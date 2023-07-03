@@ -23,3 +23,4 @@ function FilterByName ({searchByName, handleFilter}) {
 }
 
 export default FilterByName;
+
