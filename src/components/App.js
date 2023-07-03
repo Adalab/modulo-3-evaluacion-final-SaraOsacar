@@ -9,11 +9,10 @@ import ls from '../services/localStorage';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 
-
 function App() {
   const [characterList, setCharacterList] = useState(ls.get('characters', []));
   const [searchByName, setSearchByName] = useState('');
-  const [searchBySpecies, setSearchBySpecies] = useState('');
+  const [searchBySpecies, setSearchBySpecies] = useState('ALL');
 
   useEffect(() => {
     if (ls.get('characters', null) === null) {
@@ -33,39 +32,31 @@ function App() {
     }
   };
 
-  
-
-  const filteredCharacter = characterList.filter((eachCharacter) =>
-    eachCharacter.name.toLowerCase().includes(searchByName.toLowerCase())
-  );
-  /* FILTRO POR ESPECIES
-  
-  .filter((eachCharacter) => {
-    if(searchBySpecies === 'ALL') {
-      return true;
-    }
-    else {
-      return eachCharacter.species === searchBySpecies;
-    }
-  }); 
-  const species = characterList.map((eachCharacter)=> eachCharacter.species);
-  */
+  const filteredCharacter = characterList
+    .filter((eachCharacter) =>
+      eachCharacter.name.toLowerCase().includes(searchByName.toLowerCase())
+    )
+    .filter((eachCharacter) => {
+      if (searchBySpecies === 'ALL') {
+        return true;
+      } else {
+        return eachCharacter.species === searchBySpecies;
+      }
+    });
+  const species = characterList.map((eachCharacter) => eachCharacter.species);
 
   // Obtener información del character
- 
-  const {pathname} = useLocation();
-  
+
+  const { pathname } = useLocation();
 
   const routeData = matchPath('/character/:characterId', pathname);
-  
 
   const characterId = routeData !== null ? routeData.params.characterId : null;
 
   const characterData = characterList.find(
     (character) => character.id === parseInt(characterId)
   );
-  
-  
+
   return (
     <div>
       <header className="header">
@@ -79,7 +70,9 @@ function App() {
               <>
                 <Filters
                   searchByName={searchByName}
+                  searchBySpecies={searchBySpecies}
                   handleFilter={handleFilter}
+                  species={species}
                 />
                 <div className="list">
                   <CharacterList characterList={filteredCharacter} />
@@ -87,16 +80,12 @@ function App() {
               </>
             }
           />
-          
+
           <Route
             path="/character/:characterId"
             element={<CharacterDetail characterData={characterData} />}
-        
           />
-          
         </Routes>
-        
-       
       </main>
       <footer className="footer">
         <p className="footer__phrase">

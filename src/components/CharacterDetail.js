@@ -4,18 +4,22 @@ function CharacterDetail({ characterData }) {
     if(characterData){
       return (
         <form className="character__detail">
+          <Link className="link__back" to="/">
+            Back
+          </Link>
           <section className="card__detail">
-            <Link to="/">Back</Link>
             <img
-              className="card__img"
+              className="cardDetail__img"
               src={characterData.image}
               alt={`Foto de ${characterData.name}`}
             />
-            <h3>{characterData.name}</h3>
+            <h3 className="name__detail">{characterData.name}</h3>
+            <div className="container__data__detail">
             <p>Specie: {characterData.species}</p>
             <p>Origin: {characterData.origin}</p>
             <p>Episodes: {characterData.episodes}</p>
             <p>Status: {characterData.status}</p>
+            </div>
           </section>
         </form>
       );
@@ -26,7 +30,7 @@ function CharacterDetail({ characterData }) {
             <p className="error">
               Sorry, that character doesn't exist, try again!
             </p>
-            <Link to="/">Back</Link>
+            <Link className="link__back" to="/">Back</Link>
         
           </div>
         );

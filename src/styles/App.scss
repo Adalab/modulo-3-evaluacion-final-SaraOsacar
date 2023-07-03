@@ -73,6 +73,7 @@
     text-align: center;
     color: white;
     background-color: black;  
+    
     &__phrase {
       font-size: 15px;
       margin-bottom: 35px;
@@ -83,4 +84,64 @@
   display: flex;
   flex-direction: column;
    color: white;
+}
+.form__labelName {
+  color: white;
+}
+
+.container__species {
+  display: flex;
+  align-items: center;
+}
+.form__labelSpecies {
+  margin-right: 15px;
+}
+.container__name {
+  display: flex;
+    align-items: center;
+
+}
+.form__labelName {
+  margin-right: 15px;
+
+}
+.link__back {
+  color:cadetblue;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  width: 40px;
+}
+
+.card__detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 220px;
+  border: solid rgb(47, 255, 71);
+  
+}
+.cardDetail__img {
+  height: 200px;
+ 
+  
+  
+}
+
+.name__detail {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 30px;
+
+}
+
+.container__data__detail {
+  display: flex;
+    flex-direction: column;
+    text-align: center;
+
 }
