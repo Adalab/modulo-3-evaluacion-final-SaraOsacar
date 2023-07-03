@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function CharacterDetail({ characterData }) {
     if(characterData){
       return (
-        <div className="character__detail">
+        <form className="character__detail">
           <section className="card__detail">
             <Link to="/">Back</Link>
             <img
@@ -14,19 +14,20 @@ function CharacterDetail({ characterData }) {
             <h3>{characterData.name}</h3>
             <p>Specie: {characterData.species}</p>
             <p>Origin: {characterData.origin}</p>
-            <p>Episodes: {characterData.episode}</p>
+            <p>Episodes: {characterData.episodes}</p>
             <p>Status: {characterData.status}</p>
           </section>
-        </div>
+        </form>
       );
     }
     else {
         return (
           <div>
             <p className="error">
-              Sorry, that character doesn't exist, try again!{' '}
+              Sorry, that character doesn't exist, try again!
             </p>
             <Link to="/">Back</Link>
+        
           </div>
         );
     }

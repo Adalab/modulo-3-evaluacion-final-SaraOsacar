@@ -1,7 +1,7 @@
 import '../styles/App.scss';
 import Logo from '../images/Logo.jpg';
 import { useEffect, useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { useLocation, matchPath } from 'react-router-dom';
 import getDataFromApi from '../services/api';
 import CharacterList from './CharacterList';
@@ -57,7 +57,7 @@ function App() {
   
 
   const routeData = matchPath('/character/:characterId', pathname);
-  console.log(routeData);
+  
 
   const characterId = routeData !== null ? routeData.params.characterId : null;
 
