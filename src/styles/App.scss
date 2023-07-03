@@ -33,12 +33,11 @@
 }
 .select__species {
   margin-top: 20px;
-    width: 100px;
-    height: 25px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-
+  width: 100px;
+  height: 25px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 .card__container {
   border: 2px solid rgb(47, 255, 71);
@@ -49,41 +48,41 @@
   margin-right: 35px;
   margin-bottom: 30px;
   padding: 10px;
-  background-color:cadetblue;
-  /*background-color:#07b0c7;*/
-  
+  background-color: #07b0c7;
+  text-decoration: none;
+}
+.card__link {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  line-height: 10px;
 }
 .character__list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  
 }
 
 .card__img {
   height: 180px;
-  
-  
-  
 }
 .footer {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: white;
-    background-color: black;  
-    
-    &__phrase {
-      font-size: 15px;
-      margin-bottom: 35px;
-    }
-    
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  background-color: black;
+
+  &__phrase {
+    font-size: 15px;
+    margin-bottom: 35px;
+  }
 }
 .card__detail {
   display: flex;
   flex-direction: column;
-   color: white;
+  color: white;
 }
 .form__labelName {
   color: white;
@@ -98,50 +97,66 @@
 }
 .container__name {
   display: flex;
-    align-items: center;
-
+  align-items: center;
 }
 .form__labelName {
   margin-right: 15px;
-
 }
 .link__back {
-  color:cadetblue;
-  font-size: 20px;
+  color: rgb(5, 192, 192);
+  font-size: 17px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
   border-radius: 50%;
   width: 40px;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
 }
 
 .card__detail {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   width: 220px;
-  border: solid rgb(47, 255, 71);
+  border: solid 3px rgb(47, 255, 71);
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: #07b0c7;
+  color: black;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 13px 0 rgb(47, 255, 71);
   
 }
+
 .cardDetail__img {
-  height: 200px;
- 
-  
-  
+  height: 220px;
 }
 
 .name__detail {
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: 30px;
-
+  font-size: 20px;
+  color: black;
 }
 
 .container__data__detail {
   display: flex;
-    flex-direction: column;
-    text-align: center;
+  flex-direction: column;
+  text-align: center;
+  line-height: 20px;
+  font-size: 15px;
+}
 
+.background-image {
+  background-image: url('../images/BackgroundDetail.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
 }

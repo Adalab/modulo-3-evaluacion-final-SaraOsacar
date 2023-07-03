@@ -1,27 +1,25 @@
 const getDataFromApi = () => {
-
-    return fetch('https://rickandmortyapi.com/api/character/?page=1')
-    .then(response  => response.json())
-    .then(data => {
+  return fetch('https://rickandmortyapi.com/api/character/?page=1')
+    .then((response) => response.json())
+    .then((data) => {
       console.log(data.results);
 
-      const cleanData = data.results.map((objectAPI) => {
-        return {
-          id: objectAPI.id,
-          image: objectAPI.image,
-          name: objectAPI.name,
-          species: objectAPI.species,
-          origin: objectAPI.origin.name,
-          episodes: objectAPI.episode.length,
-          status: objectAPI.status,
-
-        }
-      });
-      console.log(cleanData);
-      return cleanData;
+      const cleanData = data.results
+        .map((objectAPI) => {
+          return {
+            id: objectAPI.id,
+            image: objectAPI.image,
+            name: objectAPI.name,
+            species: objectAPI.species,
+            origin: objectAPI.origin.name,
+            episodes: objectAPI.episode.length,
+            status: objectAPI.status,
+          };
+        })
       
-    })
-    
+        return cleanData;
+        
+    });
 };
 
 export default getDataFromApi;

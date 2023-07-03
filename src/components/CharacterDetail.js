@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 function CharacterDetail({ characterData }) {
     if(characterData){
       return (
-        <form className="character__detail">
+        
+        <form className="character__detail background-image">
           <Link className="link__back" to="/">
             Back
           </Link>
@@ -13,8 +14,8 @@ function CharacterDetail({ characterData }) {
               src={characterData.image}
               alt={`Foto de ${characterData.name}`}
             />
+             <div className="container__data__detail">
             <h3 className="name__detail">{characterData.name}</h3>
-            <div className="container__data__detail">
             <p>Specie: {characterData.species}</p>
             <p>Origin: {characterData.origin}</p>
             <p>Episodes: {characterData.episodes}</p>
