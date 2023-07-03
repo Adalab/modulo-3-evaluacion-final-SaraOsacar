@@ -4,21 +4,20 @@ const getDataFromApi = () => {
     .then((data) => {
       console.log(data.results);
 
-      const cleanData = data.results
-        .map((objectAPI) => {
-          return {
-            id: objectAPI.id,
-            image: objectAPI.image,
-            name: objectAPI.name,
-            species: objectAPI.species,
-            origin: objectAPI.origin.name,
-            episodes: objectAPI.episode.length,
-            status: objectAPI.status,
-          };
-        })
-      
-        return cleanData;
-        
+      const cleanData = data.results.map((objectAPI) => {
+        return {
+          id: objectAPI.id,
+          image: objectAPI.image,
+          name: objectAPI.name,
+          species: objectAPI.species,
+          origin: objectAPI.origin.name,
+          episodes: objectAPI.episode.length,
+          status: objectAPI.status,
+        };
+      });
+      cleanData.sort((a, b) => a.name.localeCompare(b.name));
+
+      return cleanData;
     });
 };
 

@@ -8,6 +8,7 @@ import CharacterList from './CharacterList';
 import ls from '../services/localStorage';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
+import LogoFooter from '../images/LogoFooter.jpg';
 
 function App() {
   const [characterList, setCharacterList] = useState(ls.get('characters', []));
@@ -88,6 +89,7 @@ function App() {
         </Routes>
       </main>
       <footer className="footer">
+        <img src={LogoFooter} alt="Logo Rick and Morty" className='footer__logo' />
         <p className="footer__phrase">
           Rick and Morty © Animated science fiction sitcom
         </p>

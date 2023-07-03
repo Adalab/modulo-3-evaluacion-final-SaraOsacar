@@ -4,7 +4,8 @@ function FilterByName({ searchByName, handleFilter }) {
     handleFilter('name', ev.target.value);
   };
 
-  const errorMessage = true;
+  /*const errorMessage = true;*/
+  
 
   return (
     <form>
@@ -20,15 +21,17 @@ function FilterByName({ searchByName, handleFilter }) {
           value={searchByName}
           onChange={handleChangeSearchName}
         />
+        
         {/*}
           {searchByName && errorMessage && (
             <p className="error__input__name">
-              Sorry {''} <span className="error__msg">{searchByName}</span>Este
-              personaje no existe
+              Sorry {''} 
+              <span className="error__msg">{searchByName}</span> this serie doesn't have any character with that name
             </p>
           )
         }
       */}
+      
       </div>
     </form>
   );
