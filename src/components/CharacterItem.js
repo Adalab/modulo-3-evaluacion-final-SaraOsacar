@@ -4,7 +4,7 @@ function CharacterItem({ eachCharacter }) {
   console.log(eachCharacter);
   return (
     <div className="card__container">
-      <Link to={'/character/' + eachCharacter.id} className='card__link'>
+      <Link to={'/character/' + eachCharacter.id} className="card__link">
         <img
           src={eachCharacter.image}
           alt={`Foto de ${eachCharacter.name}`}
