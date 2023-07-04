@@ -5,13 +5,13 @@ function FilterByName({ searchByName, handleFilter }) {
   };
 
   /*const errorMessage = true;*/
-  
+
 
   return (
     <form>
       <div className="container__name">
         <label className="form__labelName" htmlFor="search__name">
-          Name{' '}
+          Name
         </label>
         <input
           type="text"
@@ -21,17 +21,16 @@ function FilterByName({ searchByName, handleFilter }) {
           value={searchByName}
           onChange={handleChangeSearchName}
         />
-        
-        {/*}
-          {searchByName && errorMessage && (
-            <p className="error__input__name">
-              Sorry {''} 
-              <span className="error__msg">{searchByName}</span> this serie doesn't have any character with that name
-            </p>
-          )
-        }
-      */}
       
+        {/*}
+        {searchByName && errorMessage && (
+          <p className="error__input__name">
+            Sorry {''}
+            <span className="error__msg">{searchByName}</span> this serie
+            doesn't have any character with that name
+          </p>
+        )}
+        */}
       </div>
     </form>
   );
