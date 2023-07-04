@@ -1,6 +1,6 @@
 # Ejercicio de evaluación final Módulo 3 (REACT) 💫
 
-# Página web de la serie de animación Rick and Morty, con un listado de personajes (API) donde el usuario puede filtrar la búsqueda por nombre y por especie.
+Página web de la serie de animación Rick and Morty, con un listado de personajes (API) donde el usuario puede filtrar la búsqueda por nombre y por especie.
 
 1. Listado de personajes (por foto/nombre/especie).
 2. Filtrado de personajes (añadimos un input a la interfaz, de forma que al escribir un nombre queden en la interfaz solo los personajes cuyo nombre contienen las letras escrita).
