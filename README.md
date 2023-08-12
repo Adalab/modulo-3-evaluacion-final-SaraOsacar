@@ -11,7 +11,7 @@ Página web de la serie de animación Rick and Morty, con un listado de personaj
    - Tarjeta de cada personaje (CharacterItem.js)
    - Detalle de cada personaje (CharacterDetail.js)
 
-5. Detalle de personajes: implementar una nueva funcionalidad y al hacer click sobre la tarjeta de un personaje, su información aparecerá a pantalla completa. Para ello utilizaremos rutas y React Router DOM. En la pantalla de detalle aparecerá además de la foto, el nombre, especie, planeta de origen y número de episodios en los que aparece y si está vivo o muerto.   
+4. Detalle de personajes: implementar una nueva funcionalidad y al hacer click sobre la tarjeta de un personaje, su información aparecerá a pantalla completa. Para ello utilizaremos rutas y React Router DOM. En la pantalla de detalle aparecerá además de la foto, el nombre, especie, planeta de origen y número de episodios en los que aparece y si está vivo o muerto.   
 
    ### BONUS 
 
