@@ -74,6 +74,7 @@ function App() {
                   searchBySpecies={searchBySpecies}
                   handleFilter={handleFilter}
                   species={species}
+                  filteredCharacter={filteredCharacter}
                 />
                 <div className="list">
                   <CharacterList characterList={filteredCharacter} />
@@ -89,7 +90,11 @@ function App() {
         </Routes>
       </main>
       <footer className="footer">
-        <img src={LogoFooter} alt="Logo Rick and Morty" className='footer__logo' />
+        <img
+          src={LogoFooter}
+          alt="Logo Rick and Morty"
+          className="footer__logo"
+        />
         <p className="footer__phrase">
           Rick and Morty © Animated science fiction sitcom
         </p>

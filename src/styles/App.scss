@@ -53,7 +53,7 @@
   padding: 10px;
   background-color: #07b0c7;
   text-decoration: none;
-  box-shadow: 0 0 5px 0 rgb(47, 255, 71);
+  box-shadow: 0 0 9px 0 rgb(47, 255, 71);
 }
 .card__container:hover {
   transform: translateX(10px) translateY(10px);
@@ -109,7 +109,7 @@
 }
 .link__back {
   color: rgb(5, 192, 192);
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -121,6 +121,11 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 90px;
+  transition: color 0.3s;
+}
+.link__back:hover {
+  color: rgb(47, 255, 71);
+ 
 }
 
 .card__detail {
@@ -174,13 +179,23 @@
 .error__input__name {
   color: #07b0c7;
   margin-left: 15px;
+  font-size: 18px;
 }
 .error__msg {
   color: white;
 }
+
 .footer__logo {
   height: auto;
   width: 80px;
   margin-right: 10px;
   bottom: 0;
+  
+}
+.error_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  height: auto;
 }

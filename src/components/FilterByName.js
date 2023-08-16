@@ -3,12 +3,12 @@ function FilterByName({ searchByName, handleFilter }) {
     ev.preventDefault();
     handleFilter('name', ev.target.value);
   };
-
-  /*const errorMessage = true;*/
-
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="container__name">
         <label className="form__labelName" htmlFor="search__name">
           Name
@@ -21,16 +21,6 @@ function FilterByName({ searchByName, handleFilter }) {
           value={searchByName}
           onChange={handleChangeSearchName}
         />
-      
-        {/*}
-        {searchByName && errorMessage && (
-          <p className="error__input__name">
-            Sorry {''}
-            <span className="error__msg">{searchByName}</span> this serie
-            doesn't have any character with that name
-          </p>
-        )}
-        */}
       </div>
     </form>
   );

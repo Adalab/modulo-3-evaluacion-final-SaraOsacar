@@ -13,12 +13,12 @@ Página web de la serie de animación Rick and Morty, con un listado de personaj
 
 5. Detalle de personajes: implementar una nueva funcionalidad y al hacer click sobre la tarjeta de un personaje, su información aparecerá a pantalla completa. Para ello utilizaremos rutas y React Router DOM. En la pantalla de detalle aparecerá además de la foto, el nombre, especie, planeta de origen y número de episodios en los que aparece y si está vivo o muerto.   
 
-# BONUS
+# Bonus
 
 -Ordenar listado de personajes por orden alfabético.
 -Añadir un nuevo filtro (filtro por especie).
 
-# Herramientas utilizadas en este ejercicio: 
+# Herramientas utilizadas en este ejercicio: 🛠️🖥️
 
 -HTML
 -SASS
