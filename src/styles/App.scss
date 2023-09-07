@@ -311,18 +311,18 @@ body {
 }
 
 .error__image {
-  max-width: 80%;
+  max-width: 100%;
   height: auto;
-  max-height: 250px;
   padding-top: 20px;
   padding-bottom: 30px;
+  
 }
 #search__name {
   width: 190px;
   text-align: center;
 }
 .container__name {
-  margin-top: 100px;
+  margin-top: 50px;
   font-size: 15px;
   display: flex;
   flex-direction: column;
