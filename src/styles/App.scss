@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -9,17 +13,20 @@
     height: 45vh;
   }
 }
+
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: black;
+
   &__form {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   &__input {
     margin-top: 20px;
     width: 350px;
@@ -41,6 +48,7 @@
   border-radius: 5px;
   height: 25px;
 }
+
 .card__container {
   border: 2px solid rgb(47, 255, 71);
   border-radius: 9px;
@@ -55,15 +63,27 @@
   text-decoration: none;
   box-shadow: 0 0 9px 0 rgb(47, 255, 71);
 }
+
 .card__container:hover {
   transform: translateX(10px) translateY(10px);
 }
+
 .card__link {
   text-decoration: none;
   color: black;
   font-size: 15px;
   line-height: 10px;
 }
+
+.card-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
 .character__list {
   list-style: none;
   display: flex;
@@ -74,6 +94,7 @@
 .card__img {
   height: 180px;
 }
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -90,23 +111,32 @@
 
 .form__labelName {
   color: white;
+  width: 40px;
 }
 
 .container__species {
   display: flex;
   align-items: center;
 }
+
 .form__labelSpecies {
   margin-right: 15px;
   color: white;
 }
+
 .container__name {
   display: flex;
   align-items: center;
 }
+#search__name {
+  width: 190px;
+  text-align: center;
+}
+
 .form__labelName {
   margin-right: 15px;
 }
+
 .link__back {
   color: rgb(5, 192, 192);
   font-size: 30px;
@@ -123,9 +153,9 @@
   margin-top: 90px;
   transition: color 0.3s;
 }
+
 .link__back:hover {
   color: rgb(47, 255, 71);
- 
 }
 
 .card__detail {
@@ -181,6 +211,7 @@
   margin-left: 15px;
   font-size: 18px;
 }
+
 .error__msg {
   color: white;
 }
@@ -190,12 +221,116 @@
   width: 80px;
   margin-right: 10px;
   bottom: 0;
-  
 }
+
 .error_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 400px;
   height: auto;
+}
+
+@media (max-width: 768px) {
+  .header__img {
+    width: 80vw;
+    height: auto;
+  }
+
+  .main__input {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .select__species {
+    max-width: 200px;
+  }
+
+  .card__container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .list {
+    padding: 10px;
+  }
+
+  .footer__logo {
+    width: 60px;
+  }
+}
+
+@media (max-width: 468px) {
+  .header__img {
+    width: 60vw;
+    height: auto;
+  }
+
+  .main__input {
+    width: 90%;
+    max-width: 250px;
+  }
+
+  .select__species {
+    max-width: 150px;
+  }
+
+  .card__container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cardDetail__img {
+    height: 180px;
+  }
+
+  .list {
+    padding: 5px;
+  }
+
+  .footer__logo {
+    width: 40px;
+  }
+
+  .error__input__name {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+.error_container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error__image {
+  max-width: 80%;
+  height: auto;
+  max-height: 250px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+#search__name {
+  width: 190px;
+  text-align: center;
+}
+.container__name {
+  margin-top: 100px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container__species {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

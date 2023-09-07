@@ -12,21 +12,20 @@ function Filters({
       return (
         <div className="error_container">
           <p className="error__input__name">
-            Sorry but we couldn't find {searchByName}. It seems that this
-            character is not part of the serie, try again!
+            Sorry but we couldn't find {searchByName}. Try again!
           </p>
           <img
             src="https://i.gifer.com/ReYG.gif"
             alt="Error Img"
             className="error__image"
           />
-        </div>
+           </div>
       );
     }
 
     return null;
   };
-
+  
   console.log(filteredCharacter);
   return (
     <div>
@@ -36,7 +35,10 @@ function Filters({
         handlefilter={handleFilter}
       />
       {errorMessage()}
-    </div>
+      
+      </div>
+      
+    
   );
 }
 

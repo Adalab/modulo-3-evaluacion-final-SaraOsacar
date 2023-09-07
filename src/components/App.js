@@ -59,7 +59,7 @@ function App() {
   );
 
   return (
-    <div>
+    <div className="app_container">
       <header className="header">
         <img className="header__img" src={Logo} alt="Logo Rick and Morty" />
       </header>

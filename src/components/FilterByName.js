@@ -15,7 +15,7 @@ function FilterByName({ searchByName, handleFilter }) {
         </label>
         <input
           type="text"
-          placeholder="Write the name of the character you're looking for"
+          placeholder="Look for your favorite character"
           id="search__name"
           className="main__input"
           value={searchByName}

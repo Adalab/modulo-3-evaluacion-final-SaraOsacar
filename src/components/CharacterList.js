@@ -6,6 +6,6 @@ function CharacterList({ characterList }) {
       <CharacterItem eachCharacter={eachCharacter} />
     </li>
   ));
-  return <ul className="character__list">{htmlLi}</ul>;
+  return <ul className="character__list card-list">{htmlLi}</ul>;
 }
 export default CharacterList;
